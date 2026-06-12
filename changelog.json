@@ -1,5 +1,12 @@
 [
   {
+    "version": "1.3.8",
+    "changes": [
+      "Rate any answer with thumbs up or down -- tell us when a query gets something wrong",
+      "Failed queries are now reported automatically so we can fix them faster"
+    ]
+  },
+  {
     "version": "1.3.7",
     "changes": [
       "Account menu button now shows a dropdown arrow so it's clearly clickable"

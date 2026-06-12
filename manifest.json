@@ -1,6 +1,6 @@
 {
-  "version": "1.3.7-beta",
+  "version": "1.3.8-beta",
   "zip_url": "https://raw.githubusercontent.com/ThatN3rd/intramind-releases-beta/main/intramind-release.zip",
-  "sha256": "3b08c95699ac6062e8d20f64ea4783831a84be2effe7af20404bc7a26af6d1f5",
-  "whats_new": "- Account menu button now shows a dropdown arrow so it's clearly clickable"
+  "sha256": "c2c079d6d0d153bd8fc1202886324c5f65702fbd5249100bd49d67434ed98c7a",
+  "whats_new": "- Rate any answer with thumbs up or down -- tell us when a query gets something wrong\n- Failed queries are now reported automatically so we can fix them faster"
 }
