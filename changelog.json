@@ -1,5 +1,14 @@
 [
   {
+    "version": "1.3.6",
+    "changes": [
+      "Cleaner header -- live status, read-only note, and last-updated time consolidated into one chip",
+      "New account menu -- What's New, all updates, help and contact, and sign out in one place",
+      "What's New can now be reopened anytime from the account menu",
+      "Version number now links to the full update history"
+    ]
+  },
+  {
     "version": "1.3.5",
     "changes": [
       "What's New dialog updated with correct brand colour and link to full update history at intramind.ca/updates"
