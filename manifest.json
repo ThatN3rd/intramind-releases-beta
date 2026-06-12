@@ -1,6 +1,6 @@
 {
-  "version": "1.3.1-beta",
+  "version": "1.3.2-beta",
   "zip_url": "https://raw.githubusercontent.com/ThatN3rd/intramind-releases-beta/main/intramind-release.zip",
-  "sha256": "ccaf1266aa887614eb87d9e6c3a279edaf6b7243f6e3886c84f4fedac93aa58d",
-  "whats_new": "- Fixed incorrect month resolution on follow-up queries\n- Fixed Days to Payment tile drill-down failing\n- Natural language folder queries now work (e.g. \"items in my Parts folder\")\n- Multi-currency awareness -- CAD and USD amounts no longer mixed in totals\n- Improved follow-up question context across the session"
+  "sha256": "351320a757fcd7e7f60d6f5b9b52348364a2e472744a7c3513ac857723d0afe0",
+  "whats_new": "- Fixed query errors on installs where multi-currency columns are not present"
 }
