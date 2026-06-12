@@ -1,6 +1,6 @@
 {
-  "version": "1.3.3-beta",
+  "version": "1.3.4-beta",
   "zip_url": "https://raw.githubusercontent.com/ThatN3rd/intramind-releases-beta/main/intramind-release.zip",
-  "sha256": "22375928005ab3f0ae501b744e4884bb2ee47098b5c939efb2c1c2b53f392f4b",
-  "whats_new": "- Fixed folder queries returning 0 results -- items in named folders now correctly matched\n- Fixed What's New notification only showing for the first user to log in after an update"
+  "sha256": "8fa049c9a1d77164b7e7946bae1251b8af994fb12cd934ae2d0faaabfcc15367",
+  "whats_new": "- Fixed What's New not appearing on beta channel installs"
 }
