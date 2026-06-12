@@ -1,6 +1,6 @@
 {
-  "version": "1.3.6-beta",
+  "version": "1.3.7-beta",
   "zip_url": "https://raw.githubusercontent.com/ThatN3rd/intramind-releases-beta/main/intramind-release.zip",
-  "sha256": "4136cf90d1a5061064261da086dab6faed7955594db9d4da03c8e8d7cd523a19",
-  "whats_new": "- Cleaner header -- live status, read-only note, and last-updated time consolidated into one chip\n- New account menu -- What's New, all updates, help and contact, and sign out in one place\n- What's New can now be reopened anytime from the account menu\n- Version number now links to the full update history"
+  "sha256": "3b08c95699ac6062e8d20f64ea4783831a84be2effe7af20404bc7a26af6d1f5",
+  "whats_new": "- Account menu button now shows a dropdown arrow so it's clearly clickable"
 }
