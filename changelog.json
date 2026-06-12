@@ -1,0 +1,94 @@
+[
+  {
+    "version": "1.3.5",
+    "changes": [
+      "What's New dialog updated with correct brand colour and link to full update history at intramind.ca/updates"
+    ]
+  },
+  {
+    "version": "1.3.4",
+    "changes": [
+      "Fixed What's New not appearing on beta channel installs"
+    ]
+  },
+  {
+    "version": "1.3.3",
+    "changes": [
+      "Fixed folder queries returning 0 results -- items in named folders now correctly matched",
+      "Fixed What's New notification only showing for the first user to log in after an update"
+    ]
+  },
+  {
+    "version": "1.3.2",
+    "changes": [
+      "Fixed query errors on installs where multi-currency columns are not present"
+    ]
+  },
+  {
+    "version": "1.3.1",
+    "changes": [
+      "Fixed incorrect month resolution on follow-up queries",
+      "Fixed Days to Payment tile drill-down failing",
+      "Natural language folder queries now work (e.g. \"items in my Parts folder\")",
+      "Multi-currency awareness -- CAD and USD amounts no longer mixed in totals",
+      "Improved follow-up question context across the session"
+    ]
+  },
+  {
+    "version": "1.3.0",
+    "changes": [
+      "Automatic updates no longer require a GitHub token -- updates are now fully self-managing",
+      "SHA256 checksum verification on every update for integrity",
+      "What's New notifications now delivered with every update automatically"
+    ]
+  },
+  {
+    "version": "1.2.5",
+    "changes": [
+      "Cloudflare tunnel now automatically starts if stopped after an update",
+      "Cloudflared service configured with failure recovery \u2014 restarts automatically if it fails on boot"
+    ]
+  },
+  {
+    "version": "1.2.4",
+    "changes": [
+      "Log noise suppression: /health, /stats, and /logs polling no longer appears in agent.log",
+      "Portal token system: usage stats and log viewer now secured per-customer"
+    ]
+  },
+  {
+    "version": "1.2.3",
+    "changes": [
+      "Remote log viewer: admin portal can now pull server logs without RDP access"
+    ]
+  },
+  {
+    "version": "1.2.2",
+    "changes": [
+      "Usage tracking: queries today, this week, and active users visible in the admin portal"
+    ]
+  },
+  {
+    "version": "1.2.0",
+    "changes": [
+      "Multi-company support: switch between EBMS datasets at login (when multiple are configured)",
+      "Company name in header reflects the active dataset"
+    ]
+  },
+  {
+    "version": "1.1.0",
+    "changes": [
+      "Login now uses your EBMS username and password directly",
+      "Per-user permissions enforced based on your EBMS module access",
+      "Weak password warning shown after login if password doesn't meet security requirements"
+    ]
+  },
+  {
+    "version": "1.0.0",
+    "changes": [
+      "Initial release",
+      "Natural language queries against your EBMS database",
+      "AR, AP, inventory, payroll, job costing modules supported"
+    ]
+  }
+]
