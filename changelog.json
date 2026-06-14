@@ -1,5 +1,14 @@
 [
   {
+    "version": "1.3.9",
+    "changes": [
+      "Smarter answers to business questions like gross margin, most and least profitable products, and spending trends -- consistent calculations every time",
+      "Analytical answers now state how the number was calculated so you can check it against your own books",
+      "Honest about its limits -- questions it can't truly answer (like predicting churn) now point you to the closest real signal instead of guessing",
+      "Flags impossible results (like a margin over 100%) as likely data issues rather than reporting them as fact"
+    ]
+  },
+  {
     "version": "1.3.8",
     "changes": [
       "Rate any answer with thumbs up or down -- tell us when a query gets something wrong",
