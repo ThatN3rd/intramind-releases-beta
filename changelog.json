@@ -1,5 +1,15 @@
 [
   {
+    "version": "1.4.0",
+    "changes": [
+      "Major accuracy pass on how answers are calculated -- a broad review corrected dozens of underlying data rules",
+      "Gross margin is now honest about cost data: if cost isn't recorded on most of your sales, IntraMind tells you that instead of reporting an inflated number",
+      "More reliable customer and vendor balances -- credit memos and overpayments are handled consistently, and voided payments no longer count as money received",
+      "Active/inactive filtering, payroll pay rates, job status, and quote status now match what you see in EBMS",
+      "Folder and product-line filtering is more precise (no more accidental matches from unrelated folders)"
+    ]
+  },
+  {
     "version": "1.3.9",
     "changes": [
       "Smarter answers to business questions like gross margin, most and least profitable products, and spending trends -- consistent calculations every time",
