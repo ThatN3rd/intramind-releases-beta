@@ -1,6 +1,6 @@
 {
   "version": "1.4.6-beta",
   "zip_url": "https://raw.githubusercontent.com/ThatN3rd/intramind-releases-beta/main/intramind-release.zip",
-  "sha256": "697e9086e344ae478a9676d32c65de5dc41a10fb940dea46f281486643d1670b",
-  "whats_new": "- Item lookups by ID are now more reliable -- trailing spaces in EBMS item codes no longer cause misses\n- Payments drill-through now correctly excludes voided payments, matching the dashboard KPI"
+  "sha256": "1a8752d2e9ee765183a5ba81db8989e541076a2e2bd61b74a3f790390485f2f7",
+  "whats_new": "- Item lookups by ID are now more reliable -- trailing spaces in EBMS item codes no longer cause misses\n- All KPI dashboard cards now show a matching breakdown when clicked -- the drill-through number will always match the card\n- Payments received: drill-through now correctly excludes voided payments and refund rows, matching the KPI\n- Bills due this week: drill-through now shows only bills due within the next 7 days, not all open AP\n- Payroll: the KPI and drill-through now correctly exclude expense reimbursements, matching EBMS's own payroll report\n- Sales: drill-through now uses the same posted-invoice filter (statuses O and X) as the KPI card"
 }

@@ -3,7 +3,11 @@
     "version": "1.4.6",
     "changes": [
       "Item lookups by ID are now more reliable -- trailing spaces in EBMS item codes no longer cause misses",
-      "Payments drill-through now correctly excludes voided payments, matching the dashboard KPI"
+      "All KPI dashboard cards now show a matching breakdown when clicked -- the drill-through number will always match the card",
+      "Payments received: drill-through now correctly excludes voided payments and refund rows, matching the KPI",
+      "Bills due this week: drill-through now shows only bills due within the next 7 days, not all open AP",
+      "Payroll: the KPI and drill-through now correctly exclude expense reimbursements, matching EBMS's own payroll report",
+      "Sales: drill-through now uses the same posted-invoice filter (statuses O and X) as the KPI card"
     ]
   },
   {
