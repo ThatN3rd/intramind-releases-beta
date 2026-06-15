@@ -1,5 +1,16 @@
 [
   {
+    "version": "1.4.5",
+    "changes": [
+      "Major accuracy pass on how answers are calculated -- a broad review corrected dozens of underlying data rules",
+      "Gross margin is now honest about cost data: if cost isn't recorded on most of your sales, IntraMind tells you that instead of reporting an inflated number, and explains when there are simply no tracked-item sales to measure",
+      "More reliable customer and vendor balances -- credit memos and overpayments are handled consistently, and voided payments no longer count as money received",
+      "Active/inactive filtering, payroll pay rates, job status, and quote status now match what you see in EBMS",
+      "Folder and product-line filtering is more precise (no more accidental matches from unrelated folders)",
+      "More reliable background updates"
+    ]
+  },
+  {
     "version": "1.4.1",
     "changes": [
       "Clearer message when a margin question has no inventoried-product sales to measure -- now explains there are no tracked-item sales in the period instead of incorrectly saying there are no invoices"
