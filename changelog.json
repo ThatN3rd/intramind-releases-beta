@@ -1,5 +1,11 @@
 [
   {
+    "version": "1.4.1",
+    "changes": [
+      "Clearer message when a margin question has no inventoried-product sales to measure -- now explains there are no tracked-item sales in the period instead of incorrectly saying there are no invoices"
+    ]
+  },
+  {
     "version": "1.4.0",
     "changes": [
       "Major accuracy pass on how answers are calculated -- a broad review corrected dozens of underlying data rules",

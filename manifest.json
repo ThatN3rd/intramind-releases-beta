@@ -1,6 +1,6 @@
 {
-  "version": "1.4.0-beta",
+  "version": "1.4.1-beta",
   "zip_url": "https://raw.githubusercontent.com/ThatN3rd/intramind-releases-beta/main/intramind-release.zip",
-  "sha256": "dd04c43191315c3979a0ec59eccf0a2d322b5be319f1b707d7a1b4dcd3a29928",
-  "whats_new": "- Major accuracy pass on how answers are calculated -- a broad review corrected dozens of underlying data rules\n- Gross margin is now honest about cost data: if cost isn't recorded on most of your sales, IntraMind tells you that instead of reporting an inflated number\n- More reliable customer and vendor balances -- credit memos and overpayments are handled consistently, and voided payments no longer count as money received\n- Active/inactive filtering, payroll pay rates, job status, and quote status now match what you see in EBMS\n- Folder and product-line filtering is more precise (no more accidental matches from unrelated folders)"
+  "sha256": "27a55dfbfe7b57b20c668024a9a8b278708bf7c7935cd45f23e20f4351e90fad",
+  "whats_new": "- Clearer message when a margin question has no inventoried-product sales to measure -- now explains there are no tracked-item sales in the period instead of incorrectly saying there are no invoices"
 }
