@@ -2,7 +2,8 @@
   {
     "version": "1.4.6",
     "changes": [
-      "Item lookups by ID are now more reliable -- trailing spaces in EBMS item codes no longer cause misses",
+      "Item lookups by ID are now more reliable -- trailing spaces and case differences in EBMS item codes no longer cause misses",
+      "IntraMind no longer asks you to run a query yourself -- all queries run automatically and results are shown directly",
       "All KPI dashboard cards now show a matching breakdown when clicked -- the drill-through number will always match the card",
       "Payments received: drill-through now correctly excludes voided payments and refund rows, matching the KPI",
       "Bills due this week: drill-through now shows only bills due within the next 7 days, not all open AP",
