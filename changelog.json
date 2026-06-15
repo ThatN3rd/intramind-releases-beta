@@ -1,9 +1,14 @@
 [
   {
-    "version": "1.4.7",
+    "version": "1.4.8",
     "changes": [
-      "Ghost invoice lines from deleted EBMS records no longer appear in queries or KPI totals -- IntraMind now correctly ignores records that were deleted in EBMS but carried over by the database sync"
+      "Ghost invoice lines from deleted EBMS records no longer appear in queries or KPI totals -- IntraMind now correctly ignores records that were deleted in EBMS but carried over by the database sync",
+      "Fixed employee hours and payroll queries where filtering by a person's name plus a date range could return results for all employees with a matching first name, ignoring the date"
     ]
+  },
+  {
+    "version": "1.4.7",
+    "changes": []
   },
   {
     "version": "1.4.6",
