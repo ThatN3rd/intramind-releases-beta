@@ -1,5 +1,12 @@
 [
   {
+    "version": "1.4.6",
+    "changes": [
+      "Item lookups by ID are now more reliable -- trailing spaces in EBMS item codes no longer cause misses",
+      "Payments drill-through now correctly excludes voided payments, matching the dashboard KPI"
+    ]
+  },
+  {
     "version": "1.4.5",
     "changes": [
       "Major accuracy pass on how answers are calculated -- a broad review corrected dozens of underlying data rules",
