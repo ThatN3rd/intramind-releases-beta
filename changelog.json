@@ -1,5 +1,11 @@
 [
   {
+    "version": "1.4.7",
+    "changes": [
+      "Ghost invoice lines from deleted EBMS records no longer appear in queries or KPI totals -- IntraMind now correctly ignores records that were deleted in EBMS but carried over by the database sync"
+    ]
+  },
+  {
     "version": "1.4.6",
     "changes": [
       "Item lookups by ID are now more reliable -- trailing spaces and case differences in EBMS item codes no longer cause misses",
