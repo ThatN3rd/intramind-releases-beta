@@ -1,5 +1,21 @@
 [
   {
+    "version": "1.4.9",
+    "changes": [
+      "Vendor payment questions now correctly query vendor bills instead of customer invoices",
+      "Fixed: payments applied to a specific invoice were returning zero results due to a wrong join key between payment tables",
+      "Fixed: \"bills due this week\" and similar queries now correctly handle bills with no payment terms set in EBMS",
+      "Fixed: early payment discount queries now use the discount deadline, not the final payment due date",
+      "Fixed: payroll averages and counts now correctly include only finalized paychecks, not in-progress or voided entries",
+      "\"Last pay period\" queries now use the actual pay period from EBMS instead of an approximate date range",
+      "Fixed: job name lookups (e.g. \"hours on the Riverside job\") now resolve correctly through the job code",
+      "Fixed: questions asking for a count or breakdown by category now use grouped totals instead of a row list that could be truncated",
+      "Fixed: \"slowest payers\" and similar date-difference queries no longer error on the days calculation",
+      "Deleted/merged customer records no longer appear in customer lists and lookups",
+      "Business questions phrased in industry language (menu items, collections, payroll spend, gross margin) are now always answered directly"
+    ]
+  },
+  {
     "version": "1.4.8",
     "changes": [
       "Ghost invoice lines from deleted EBMS records no longer appear in queries or KPI totals -- IntraMind now correctly ignores records that were deleted in EBMS but carried over by the database sync",

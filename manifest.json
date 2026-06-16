@@ -1,6 +1,6 @@
 {
-  "version": "1.4.8-beta",
+  "version": "1.4.9-beta",
   "zip_url": "https://raw.githubusercontent.com/ThatN3rd/intramind-releases-beta/main/intramind-release.zip",
-  "sha256": "88649c90c197b6b3e8292c0b9381d4fd1fbdfe51993d87f8e9d79d3e186bc00d",
-  "whats_new": "- Ghost invoice lines from deleted EBMS records no longer appear in queries or KPI totals -- IntraMind now correctly ignores records that were deleted in EBMS but carried over by the database sync\n- Fixed employee hours and payroll queries where filtering by a person's name plus a date range could return results for all employees with a matching first name, ignoring the date"
+  "sha256": "64594aa50cf720d69a36dd5a67639cdff2d32f56da854d122f3df3ec8bd2b099",
+  "whats_new": "- Vendor payment questions now correctly query vendor bills instead of customer invoices\n- Fixed: payments applied to a specific invoice were returning zero results due to a wrong join key between payment tables\n- Fixed: \"bills due this week\" and similar queries now correctly handle bills with no payment terms set in EBMS\n- Fixed: early payment discount queries now use the discount deadline, not the final payment due date\n- Fixed: payroll averages and counts now correctly include only finalized paychecks, not in-progress or voided entries\n- \"Last pay period\" queries now use the actual pay period from EBMS instead of an approximate date range\n- Fixed: job name lookups (e.g. \"hours on the Riverside job\") now resolve correctly through the job code\n- Fixed: questions asking for a count or breakdown by category now use grouped totals instead of a row list that could be truncated\n- Fixed: \"slowest payers\" and similar date-difference queries no longer error on the days calculation\n- Deleted/merged customer records no longer appear in customer lists and lookups\n- Business questions phrased in industry language (menu items, collections, payroll spend, gross margin) are now always answered directly"
 }
