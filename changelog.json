@@ -1,5 +1,13 @@
 [
   {
+    "version": "1.5.1",
+    "changes": [
+      "Fixed a conflict on servers that also run other Cloudflare Tunnel-based software (e.g. Koble) -- installing or updating IntraMind could previously disable the other product's connection, and vice versa",
+      "Fixed an installation failure on servers with a newer version of Python already present",
+      "Fixed a missing dependency that could cause the installer to fail partway through on a fresh server"
+    ]
+  },
+  {
     "version": "1.4.9",
     "changes": [
       "Vendor payment questions now correctly query vendor bills instead of customer invoices",
