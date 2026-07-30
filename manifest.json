@@ -1,6 +1,6 @@
 {
   "version": "1.5.2-beta",
   "zip_url": "https://raw.githubusercontent.com/ThatN3rd/intramind-releases-beta/main/intramind-release.zip",
-  "sha256": "0da91b099412767972c1ea95c8827408e0b8d92958f28884a7beb590f160e2a0",
+  "sha256": "680c9fef1df3ce0878d5f1000d3961281bfb074a798cf73b4b2ec705ca65afd8",
   "whats_new": "- Fixed login failing after a password reset on newer EBMS versions -- some EBMS builds store the password differently than older versions, and login now recognizes both\n- Auto-update now recognizes and repairs its own tunnel service if it was previously renamed or disabled by a conflict with another Cloudflare Tunnel-based product"
 }
