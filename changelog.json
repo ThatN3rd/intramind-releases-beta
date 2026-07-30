@@ -1,5 +1,12 @@
 [
   {
+    "version": "1.5.2",
+    "changes": [
+      "Fixed login failing after a password reset on newer EBMS versions -- some EBMS builds store the password differently than older versions, and login now recognizes both",
+      "Auto-update now recognizes and repairs its own tunnel service if it was previously renamed or disabled by a conflict with another Cloudflare Tunnel-based product"
+    ]
+  },
+  {
     "version": "1.5.1",
     "changes": [
       "Fixed a conflict on servers that also run other Cloudflare Tunnel-based software (e.g. Koble) -- installing or updating IntraMind could previously disable the other product's connection, and vice versa",

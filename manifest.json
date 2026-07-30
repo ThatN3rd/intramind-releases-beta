@@ -1,6 +1,6 @@
 {
-  "version": "1.5.1-beta",
+  "version": "1.5.2-beta",
   "zip_url": "https://raw.githubusercontent.com/ThatN3rd/intramind-releases-beta/main/intramind-release.zip",
-  "sha256": "36b87b5a01fae1d159a104a5ba4d6aa234920169bad8c6b998b144b465c56fd0",
-  "whats_new": "- Fixed a conflict on servers that also run other Cloudflare Tunnel-based software (e.g. Koble) -- installing or updating IntraMind could previously disable the other product's connection, and vice versa\n- Fixed an installation failure on servers with a newer version of Python already present\n- Fixed a missing dependency that could cause the installer to fail partway through on a fresh server"
+  "sha256": "0da91b099412767972c1ea95c8827408e0b8d92958f28884a7beb590f160e2a0",
+  "whats_new": "- Fixed login failing after a password reset on newer EBMS versions -- some EBMS builds store the password differently than older versions, and login now recognizes both\n- Auto-update now recognizes and repairs its own tunnel service if it was previously renamed or disabled by a conflict with another Cloudflare Tunnel-based product"
 }
