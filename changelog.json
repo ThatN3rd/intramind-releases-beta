@@ -1,5 +1,11 @@
 [
   {
+    "version": "1.5.4",
+    "changes": [
+      "Added a Settings option to the account menu, where you can now choose to hide the SQL shown under chat answers. The theme (light/dark) toggle has also moved here from its own header button."
+    ]
+  },
+  {
     "version": "1.5.3",
     "changes": [
       "Query results are now shown as a scrollable table instead of typed out row-by-row, and the row limit has been raised from 200 to 1000",
