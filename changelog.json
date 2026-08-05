@@ -1,5 +1,23 @@
 [
   {
+    "version": "1.5.5",
+    "changes": [
+      "Query results are now shown as a scrollable table instead of typed out row-by-row, and the row limit has been raised from 200 to 1000",
+      "When a result is too large to show in full, the total count and total are now always accurate -- previously they could be silently based on only the visible rows instead of the full result",
+      "Fixed: some general ledger questions were reading an empty pending-transactions table instead of the posted ledger, which could show no activity for accounts that actually had activity",
+      "Fixed: dates stored as text in older ledger tables (including EBMS's year-end adjustment entries) no longer cause the query to fail",
+      "Fixed: questions about a specific date or period (\"this month,\" \"last week,\" a bare date) now resolve against today's actual date instead of an example date",
+      "Fixed: sales and revenue totals for a period are now always calculated directly in the database, never estimated from a partial list of rows",
+      "Fixed: excluding a customer or vendor by name no longer accidentally excludes every company-type account that has no first name on file",
+      "Fixed: a fuzzy-match filter (like a warehouse name) combined with a date or status filter now groups correctly, so the date/status filter can no longer be silently dropped",
+      "Fixed: item-level revenue questions no longer double-count when joined against invoice header totals",
+      "Performance: query costs reduced by caching the AI's system instructions instead of resending them in full on every question",
+      "Fixed login failing after a password reset on newer EBMS versions -- some EBMS builds store the password differently than older versions, and login now recognizes both",
+      "Auto-update now recognizes and repairs its own tunnel service if it was previously renamed or disabled by a conflict with another Cloudflare Tunnel-based product",
+      "Added a Settings option to the account menu, where you can now choose to hide the SQL shown under chat answers. The theme (light/dark) toggle has also moved here from its own header button."
+    ]
+  },
+  {
     "version": "1.5.4",
     "changes": [
       "Added a Settings option to the account menu, where you can now choose to hide the SQL shown under chat answers. The theme (light/dark) toggle has also moved here from its own header button."
