@@ -1,5 +1,11 @@
 [
   {
+    "version": "1.5.7",
+    "changes": [
+      "Added: this instance can now be remotely updated or switched between the stable/beta channels from the IntraMind admin portal, without needing local access to the machine."
+    ]
+  },
+  {
     "version": "1.5.5",
     "changes": [
       "Query results are now shown as a scrollable table instead of typed out row-by-row, and the row limit has been raised from 200 to 1000",
