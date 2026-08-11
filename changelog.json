@@ -1,8 +1,33 @@
 [
   {
+    "version": "1.5.8",
+    "changes": [
+      "Added: IntraMind now remembers the results of your previous question within a conversation, so follow-up questions like \"and last month?\" or \"just the top 5\" work without repeating context. A New Chat button resets the conversation when you want a fresh start.",
+      "Fixed: folder-based questions (e.g. \"items in my Rentals folder\") could silently return zero results due to a matching bug in how folder paths were compared.",
+      "Fixed: fiscal-year-based questions (\"this fiscal year,\" \"last fiscal year\") could compute the wrong date range depending on which month your fiscal year starts in.",
+      "Fixed: \"total sales\" could give a different number for the identical question depending on how it was phrased.",
+      "Fixed: warehouse-related inventory questions could recommend the wrong warehouse, or fail to match a warehouse referenced by name instead of its code.",
+      "Fixed: searching by a full name (e.g. \"John Smith\") no longer matches on just one of the words.",
+      "Fixed: year-over-year follow-up questions could reuse the wrong date window from a previous question.",
+      "Fixed: inventory questions about a negative on-hand quantity could produce an explanation not actually supported by the data.",
+      "Fixed: some legitimate questions were being refused, and custom fields weren't always used when relevant.",
+      "Fixed: the New Chat button didn't work from the Dashboard, and follow-up suggestion chips could disappear permanently after their first use.",
+      "Fixed: the What's New dialog could stretch full-screen when the changelog was long.",
+      "Closed a permission gap where roughly 20 tables weren't mapped to any module, which could let a user query data outside their assigned EBMS module permissions.",
+      "Various smaller query-generation fixes surfaced by customer feedback (abbreviated terms, incomplete date periods, category/folder keyword matching)."
+    ]
+  },
+  {
     "version": "1.5.7",
     "changes": [
       "Added: this instance can now be remotely updated or switched between the stable/beta channels from the IntraMind admin portal, without needing local access to the machine."
+    ]
+  },
+  {
+    "version": "1.5.6",
+    "changes": [
+      "Fixed: dashboard AR/AP outstanding balances and overdue totals could overstate what's owed -- overpayments on a normal invoice were silently excluded from the total instead of reducing it, while an equivalent credit memo was handled correctly. Now netted consistently either way, matching a real EBMS AR Aging report exactly.",
+      "Fixed: the background service that powers AI chat answers will now automatically restart if it ever crashes, instead of silently staying down until manually restarted."
     ]
   },
   {
