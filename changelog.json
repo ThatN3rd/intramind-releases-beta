@@ -1,26 +1,32 @@
 [
   {
-    "version": "1.5.8",
+    "version": "1.5.9",
     "changes": [
-      "Added: IntraMind now remembers the results of your previous question within a conversation, so follow-up questions like \"and last month?\" or \"just the top 5\" work without repeating context. A New Chat button resets the conversation when you want a fresh start.",
-      "Fixed: folder-based questions (e.g. \"items in my Rentals folder\") could silently return zero results due to a matching bug in how folder paths were compared.",
-      "Fixed: fiscal-year-based questions (\"this fiscal year,\" \"last fiscal year\") could compute the wrong date range depending on which month your fiscal year starts in.",
-      "Fixed: \"total sales\" could give a different number for the identical question depending on how it was phrased.",
-      "Fixed: warehouse-related inventory questions could recommend the wrong warehouse, or fail to match a warehouse referenced by name instead of its code.",
-      "Fixed: searching by a full name (e.g. \"John Smith\") no longer matches on just one of the words.",
-      "Fixed: year-over-year follow-up questions could reuse the wrong date window from a previous question.",
-      "Fixed: inventory questions about a negative on-hand quantity could produce an explanation not actually supported by the data.",
-      "Fixed: some legitimate questions were being refused, and custom fields weren't always used when relevant.",
-      "Fixed: the New Chat button didn't work from the Dashboard, and follow-up suggestion chips could disappear permanently after their first use.",
-      "Fixed: the What's New dialog could stretch full-screen when the changelog was long.",
-      "Closed a permission gap where roughly 20 tables weren't mapped to any module, which could let a user query data outside their assigned EBMS module permissions.",
-      "Various smaller query-generation fixes surfaced by customer feedback (abbreviated terms, incomplete date periods, category/folder keyword matching)."
-    ]
-  },
-  {
-    "version": "1.5.7",
-    "changes": [
-      "Added: this instance can now be remotely updated or switched between the stable/beta channels from the IntraMind admin portal, without needing local access to the machine."
+      "Added: you can now paste an existing FoxPro/report query and ask IntraMind to translate it into a question it can answer.",
+      "Fixed: total-sales style questions could give a different total depending on how the question was phrased, from two calculations that weren't always consistent with each other.",
+      "Fixed: a name search like \"vendors named Smith and Jones\" now correctly matches either name, instead of requiring both to appear together.",
+      "Fixed: folder/category filtering questions could occasionally match extra unrelated records due to a trailing-space mismatch.",
+      "Fixed: warehouse questions now consistently use the correct warehouse code instead of occasionally mixing up code and name.",
+      "Fixed: a follow-up \"how does that compare to last year\" question could silently reuse the wrong date range from an earlier question.",
+      "Fixed: a question about negative on-hand inventory could produce a fabricated explanation instead of just reporting the numbers.",
+      "Fixed: a P&L (profit & loss) question could report a mathematically inverted (sign-flipped) result in some phrasings.",
+      "Fixed: an AP (vendor bill) line-item amount question could double-count in some cases due to a join key mismatch.",
+      "Fixed: a per-invoice payment total could silently include allocations from a voided receipt.",
+      "Fixed: several general-ledger and year-over-year questions that previously returned no answer, or an inconsistent one, now resolve correctly.",
+      "Fixed: some questions that IntraMind could actually answer were being incorrectly refused.",
+      "Fixed: a rare SQL error on some multi-part financial summary questions (e.g. a full P&L in one answer).",
+      "Fixed: dashboard KPI drill-down could occasionally show a total that didn't match its own detail list.",
+      "Fixed: dashboard KPI drill-down no longer crashes on an unexpected server response.",
+      "Fixed: a stored-XSS issue in the KPI drill-down detail view.",
+      "Fixed: the \"What's New\" popup could stretch to fill the whole screen on a long changelog.",
+      "Fixed: \"New Chat\" could silently do nothing, and the starting suggestions could disappear permanently after your first message.",
+      "Fixed: logging out no longer leaves the previous session's dashboard/chat data briefly visible to the next login.",
+      "Fixed: a stale error or answer from a previous chat could occasionally appear after starting a new one.",
+      "Fixed: submitting feedback always showed \"Thanks,\" even when it silently failed to send.",
+      "Fixed: several places where a slow or dropped network request could leave a button stuck disabled with no explanation, or hang indefinitely with no timeout.",
+      "Security: query rate-limiting is now based on your real originating IP instead of a value that could be spoofed.",
+      "Security: dashboard/report access now consistently enforces your module permissions everywhere, closing a couple of narrow gaps where a permission check could be skipped or accidentally treated as \"allow\" by default.",
+      "Security: hardened the SQL safety filter against a couple of narrow ways a disallowed statement type could have slipped through."
     ]
   },
   {
@@ -28,24 +34,6 @@
     "changes": [
       "Fixed: dashboard AR/AP outstanding balances and overdue totals could overstate what's owed -- overpayments on a normal invoice were silently excluded from the total instead of reducing it, while an equivalent credit memo was handled correctly. Now netted consistently either way, matching a real EBMS AR Aging report exactly.",
       "Fixed: the background service that powers AI chat answers will now automatically restart if it ever crashes, instead of silently staying down until manually restarted."
-    ]
-  },
-  {
-    "version": "1.5.5",
-    "changes": [
-      "Query results are now shown as a scrollable table instead of typed out row-by-row, and the row limit has been raised from 200 to 1000",
-      "When a result is too large to show in full, the total count and total are now always accurate -- previously they could be silently based on only the visible rows instead of the full result",
-      "Fixed: some general ledger questions were reading an empty pending-transactions table instead of the posted ledger, which could show no activity for accounts that actually had activity",
-      "Fixed: dates stored as text in older ledger tables (including EBMS's year-end adjustment entries) no longer cause the query to fail",
-      "Fixed: questions about a specific date or period (\"this month,\" \"last week,\" a bare date) now resolve against today's actual date instead of an example date",
-      "Fixed: sales and revenue totals for a period are now always calculated directly in the database, never estimated from a partial list of rows",
-      "Fixed: excluding a customer or vendor by name no longer accidentally excludes every company-type account that has no first name on file",
-      "Fixed: a fuzzy-match filter (like a warehouse name) combined with a date or status filter now groups correctly, so the date/status filter can no longer be silently dropped",
-      "Fixed: item-level revenue questions no longer double-count when joined against invoice header totals",
-      "Performance: query costs reduced by caching the AI's system instructions instead of resending them in full on every question",
-      "Fixed login failing after a password reset on newer EBMS versions -- some EBMS builds store the password differently than older versions, and login now recognizes both",
-      "Auto-update now recognizes and repairs its own tunnel service if it was previously renamed or disabled by a conflict with another Cloudflare Tunnel-based product",
-      "Added a Settings option to the account menu, where you can now choose to hide the SQL shown under chat answers. The theme (light/dark) toggle has also moved here from its own header button."
     ]
   },
   {
