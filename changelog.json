@@ -1,5 +1,35 @@
 [
   {
+    "version": "1.6.1",
+    "changes": [
+      "Added: switching a customer's release channel, or turning admin actions on/off, now shows a confirmation message when it succeeds, not just when it fails.",
+      "Added: triggering a live update from the portal now asks for confirmation first.",
+      "Added: onboarding now cleans up the temporary plaintext secrets bundle from the admin's own machine after setup completes, instead of leaving it behind.",
+      "Fixed: a markdown table containing bold, italic, or code-formatted text with a \"|\" character in it (e.g. a status code) no longer desyncs the table's columns.",
+      "Fixed: pressing Enter twice quickly in the login password field could submit the login twice.",
+      "Fixed: dashboard KPI and chart errors now show the real server error message instead of a generic one, making outages easier to diagnose.",
+      "Fixed: the feedback \"thumbs up\" button could be clicked repeatedly before the request completed, recording duplicate feedback.",
+      "Fixed: several remaining network requests with no timeout could hang indefinitely on a dropped connection; all now fail visibly instead.",
+      "Fixed: several portal admin actions could fail silently with an unhandled error instead of a visible message.",
+      "Fixed: a folder/category-based report recipe (used across several report types) could match the wrong item, or miss matches entirely, when a folder name wasn't unique.",
+      "Fixed: a fabricated table/column reference in one report example has been corrected to the real schema.",
+      "Fixed: the dead-inventory report could count items that were still in an unposted/pending state.",
+      "Fixed: EBMSLiveAgent and the Cloudflare Tunnel service now genuinely recover after an unexpected crash -- previously a restart could be attempted but silently fail to actually bring the service back.",
+      "Fixed: an update triggered from the portal could occasionally hang indefinitely with no timeout; update and service start/stop operations are now all time-bounded.",
+      "Fixed: the installer and updater's own internal locking could occasionally misbehave under specific timing; hardened against several such races.",
+      "Fixed: log rotation could, in rare cases, stall the whole background service; decoupled from the process that could block it.",
+      "Fixed: uninstalling now actually tracks and reports real cleanup failures instead of always reporting success, and properly runs Python's own uninstaller rather than just deleting files.",
+      "Fixed: the installer's own downloads (Python, Cloudflare Tunnel) are now bounded, so a stalled download no longer hangs the install indefinitely.",
+      "Fixed: a missing or empty configuration file during install/update now fails immediately with a clear message instead of a confusing later crash.",
+      "Performance: scheduled auto-update times are now randomized per install, so many customers no longer hit the update server at the same moment.",
+      "Security: `/feedback` and several other endpoints now cap field lengths and rate-limit requests, closing a few narrow abuse/resource-exhaustion gaps.",
+      "Security: dashboard and chart endpoints, and portal-token-gated endpoints, now rate-limit independently instead of sharing a bucket with login -- heavy normal use of one no longer risks locking out the other.",
+      "Security: closed a rare SQL-safety-filter gap where a comment or literal string could hide a disallowed table/schema reference from the write-keyword and schema-isolation checks.",
+      "Security: a Postgres error message could occasionally leak more raw detail than intended in an error response; now sanitized.",
+      "Security: login attempts are now capped to a fixed memory footprint, closing a pre-authentication unbounded-growth gap."
+    ]
+  },
+  {
     "version": "1.5.9",
     "changes": [
       "Added: you can now paste an existing FoxPro/report query and ask IntraMind to translate it into a question it can answer.",
