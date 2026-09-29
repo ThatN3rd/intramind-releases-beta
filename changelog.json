@@ -1,5 +1,16 @@
 [
   {
+    "version": "1.6.2",
+    "changes": [
+      "Added: rental status, serial numbers, and added-cost-batch totals for serialized inventory items are now answerable directly, instead of the assistant refusing or guessing at an answer.",
+      "Fixed: a question about rental income (or a similar revenue category) for a specific month no longer gets a generic \"I can't answer that\" refusal.",
+      "Fixed: a question about a custom tab or field a customer added to EBMS now gets an honest, specific answer instead of a generic refusal.",
+      "Fixed: a \"where do I find X\" navigation-style question is no longer refused outright when a real, related answer is available instead.",
+      "Fixed: a margin/profit report's unclassified-revenue coverage check could understate a real gap when offsetting positive and negative unclassified amounts canceled out, or when net revenue was negative for the scope being reported on; it is now sign-robust in both cases.",
+      "Fixed: that same coverage check could read as \"no gap\" for a scope with no unclassified activity at all, instead of a clean zero; and the report can now explain what a share above 100%, or an undefined result from exactly $0 net revenue, actually means."
+    ]
+  },
+  {
     "version": "1.6.1",
     "changes": [
       "Added: switching a customer's release channel, or turning admin actions on/off, now shows a confirmation message when it succeeds, not just when it fails.",
