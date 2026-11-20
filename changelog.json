@@ -1,5 +1,58 @@
 [
   {
+    "version": "1.7.2",
+    "changes": [
+      "New: Assist cleans up its own data every day. Uploaded bills and orders are kept at most 30 days, drafts are removed 90 days after their last change, and the write history (audit log) is removed after one year. The cleanup holds back if the server clock looks wrong or if more than half of a table would go at once, and it never touches EBMS. The \"Keep dropped documents\" company setting now offers 7, 14 or 30 days.",
+      "New: the application log and the error log are cleaned of entries older than one year.",
+      "Changed: the Terms now have their own version. You are asked to accept again once after this update, and from then on only when the Terms themselves change, not on every software update.",
+      "Changed: the Terms now carry their final dates and backup provider name; you will be asked to accept once more.",
+      "Changed: Assist drafts can have up to 500 lines. A document with more lines than fit lists the extra lines and blocks the save instead of dropping them. A \"reorder everything\" request for a vendor with more than 500 low parts says so and leaves the rest for a second request.",
+      "Changed: Assist never assumes a quantity. A line with no quantity must be filled in, and a quantity of 0, a negative or a huge one is blocked. A part number that comes from the other company's document is checked against EBMS's description before it is accepted. A purchase order read from a document lists any freight or discount it could not carry as a note, and its card now shows \"Subtotal (before tax)\".",
+      "Changed: a customer or vendor that exists but is inactive in EBMS is recognised instead of being proposed as a new duplicate, two new parts on one draft can no longer get the same ID, and a bill can create at most 5 new records, like orders.",
+      "Changed: clearing a typed price or cost puts the line back to EBMS's price, the vendor's cost or the cost printed on the document, and a new part's main vendor follows the purchase order's or bill's vendor.",
+      "Changed: a typed purchase or sales order request that is too long to finish now says so and asks you to split it, instead of drafting part of it.",
+      "Fixed: a save that timed out can no longer delete a new part, customer or vendor that EBMS had already used, editing a draft after a failed save checks EBMS first, and a user who can no longer create purchase orders can no longer edit or save one.",
+      "Fixed: Undo and rollback no longer report success when EBMS answers with something unexpected, and a draft opened during its save no longer loses the saved card's notes.",
+      "Fixed: a drafts file from an earlier test build now gets its missing audit column by itself.",
+      "Fixed: a part import where EBMS did not answer for some parts now ends as \"not finished, press Save to check them\" instead of \"saved\". IntraMind keeps a record of each part before changing it, re-checks the parts it did not hear back about before writing anything to them again, and Undo can put the old prices back.",
+      "Fixed: Undo works on a part import that did not finish, and a part created by an import that was cut off can be removed by Undo.",
+      "Fixed: pressing Undo on a part import a second time while its Undo was still running (a double-click or a second tab) froze every import on the server until IntraMind was restarted.",
+      "Changed: once an Undo has started on a part import, Save is refused until the Undo finishes (or the draft is discarded).",
+      "Changed: a part import cannot be switched between \"update\" and \"add\" once it has changed anything.",
+      "Changed: Clear in the Review list leaves a part import alone while its Undo is running.",
+      "New: before a vendor bill is saved, Assist asks EBMS whether the same invoice number from the same vendor is already there, in any status, and refuses to enter it twice. If EBMS cannot be asked, the save is refused and the draft is kept.",
+      "New: when EBMS refuses a new record or a document, the card now shows EBMS's own short reason, and a refused part with a bad G/L account says what to check.",
+      "New: a new part with no price warns on the card before saving, says so after saving when EBMS holds no price for it, and a later sales order using a part with no price anywhere in EBMS warns that the line will be $0.00.",
+      "Changed: the folder suggested for a new part now matches the folder name exactly and tries the three longest words of the description."
+    ]
+  },
+  {
+    "version": "1.7.1",
+    "changes": [
+      "New: IntraMind Assist. Draft and save purchase orders, sales orders, vendor bills (from a dropped PDF or photo), and new customers, vendors and parts into EBMS, entered as the signed-in EBMS user and only where writes are turned on. Review lists, search pickers, line editing, bill-to-PO matching and Open in EBMS links are included. Part import adds or updates parts in bulk.",
+      "New: in Assist, typing a request such as \"order everything that needs reordering from Acme\" drafts a purchase order with every part at or below its reorder point from that vendor.",
+      "New: a redesigned layout with a dashboard on the left and the assistant on the right, role-based views (Owner, Purchaser, Sales) and pinned answers.",
+      "New: user settings that follow the user, and company settings for EBMS Administrators.",
+      "Changed: the tiers are now called IntraMind Insight and IntraMind Assist, and every user signs in with a named EBMS user.",
+      "Changed: you must accept the Terms again after this update.",
+      "Fixed: order totals use the unprocessed-order total, and a list of open sales-order lines totals each line correctly; other sales totals are unchanged.",
+      "Fixed: users without access no longer see the Dashboard view control, and signing out clears Settings."
+    ]
+  },
+  {
+    "version": "1.6.3",
+    "changes": [
+      "Fixed: generated queries can no longer read the database's own system tables (table lists, server settings, other sessions' activity), and several other query-safety checks were tightened.",
+      "Fixed: sales totals that combine invoice headers with their line items are checked in more query shapes, so a total is no longer counted more than once; a retry fixes the query before it is shown.",
+      "Fixed: \"sales by customer and product\" style questions that ask for a running total beside grouped rows no longer fail with a database error.",
+      "Fixed: onboarding and install now catch a damaged or split API key line, show clear guidance when a service fails to start, and handle company names with special characters correctly.",
+      "Fixed: the portal could silently drop a customer's down-vote when the task tracker was briefly unavailable, and could show a failed channel switch as an error after it had actually succeeded; both now behave correctly, and customer usage counts are shown safely.",
+      "Fixed: the feedback watcher no longer files duplicate tickets when it cannot save its state, handles malformed entries without stopping, and cannot run twice at once.",
+      "Fixed: automatic updates now install a release's changed Python packages (downloaded before the service stops), restore the previous packages on a rollback, wait longer for the service to come back, skip a release that failed for 24 hours (the portal's \"Update Now\" still retries immediately), and keep the update schedule's staggered start time.",
+      "Fixed: a security gap where the updater's package installer could read a configuration file that any local user could create; it now ignores such files."
+    ]
+  },
+  {
     "version": "1.6.2",
     "changes": [
       "Added: rental status, serial numbers, and added-cost-batch totals for serialized inventory items are now answerable directly, instead of the assistant refusing or guessing at an answer.",
